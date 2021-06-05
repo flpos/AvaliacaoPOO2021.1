@@ -15,13 +15,13 @@ public class ClienteView {
         ClienteController clienteController = new ClienteController();
         FornecedorController fornecedorController = new FornecedorController();
         Screen.clearScreen();
-        System.out.println("Digite seu usu√°rio, pode ser um novo: ");
+        System.out.println("Digite seu usu·rio, pode ser um novo: ");
         String nomeLogin = sc.nextLine();
         Cliente cliente = clienteController.findByLogin(nomeLogin);
         if (cliente != null) {
             Screen.clearScreen();
             System.out.println("Seja bem vindo(a) " + cliente.getNome() + "\n");
-            System.out.println("Digite (V) para ver produtos dispon√≠veis");
+            System.out.println("Digite (V) para ver produtos disponÌveis");
             System.out.println("Digite (P) para ver pedidos anteriores");
             System.out.println("Digite (S) para sair");
             String comando = "";
@@ -34,7 +34,7 @@ public class ClienteView {
                     break;
                 case "P":
                     Screen.clearScreen();
-                    System.out.println("Ainda n√£o h√° pedidos...\n");
+                    System.out.println("Ainda n„o h· pedidos...\n");
                     comando = "";
                     break;
                 case "S":
@@ -46,7 +46,7 @@ public class ClienteView {
                 }
             }
         } else {
-            System.out.println("Criando usu√°rio...");
+            System.out.println("Criando usu·rio...");
             System.out.println("Digite seu nome");
             String nome = sc.nextLine();
             Integer newId = ThreadLocalRandom.current().nextInt();
@@ -59,7 +59,7 @@ public class ClienteView {
         Screen.clearScreen();
         Iterator<Produto> produtos = fornecedorController.getTodosOsProdutos().iterator();
         if (!produtos.hasNext()) {
-            System.out.println("N√£o h√° produtos cadastrados...\n");
+            System.out.println("N„o h· produtos cadastrados...\n");
         }
         while (produtos.hasNext()) {
             Produto produto = produtos.next();
